@@ -47,8 +47,8 @@ define(['exports', 'aurelia-templating', 'aurelia-binding', 'aurelia-dependency-
         if (typeof _this.dragEndFn === 'function') _this.dragEndFn({ item: item, itemVM: itemVM });
       });
 
-      this.dragula.on('cloned', function (mirror, item, itemVM) {
-        if (typeof _this.clonedFn === 'function') _this.clonedFn({ copy: copy, item: item, itemVM: itemVM });
+      this.dragula.on('cloned', function (clone, original, type) {
+        if (typeof _this.clonedFn === 'function') _this.clonedFn({ clone: clone, original: original, type: type });
       });
 
       this.dragula.on('over', function (item, target, source, itemVM) {
